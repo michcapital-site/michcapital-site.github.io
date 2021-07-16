@@ -27,8 +27,6 @@
     .black a {color:white;text-decoration: none;cursor:alias;}
     .white {background-color: white; color: black;justify-content: center;}
     .white a {position: relative;font-size: 2rem;padding-bottom: 4px;cursor:e-resize;}
-    .white a:after {content: '';position: absolute;width: 100%;transform: scaleX(0); height: 2px;bottom: 0;left: 0;background-color: #000;transform-origin: bottom right;transition: transform 0.25s ease-out;}
-    .white a:hover:after {transform: scaleX(1);transform-origin: bottom left;}
     .phone, .email {margin-bottom: 2em; overflow: hidden;display: block;}
     .phone a, .email a {display: block;transform: translateY(-50px);opacity: 0;}
     @media screen and (max-width: 768px) {
@@ -41,6 +39,10 @@
       .black {width: 100%;}
       .line {height:50vh;}
       .container {min-height: calc(var(--vh, 1vh) * 100);}
+    }
+    @media screen and (min-width:769px) {
+      .white a:after {content: '';position: absolute;width: 100%;transform: scaleX(0); height: 2px;bottom: 0;left: 0;background-color: #000;transform-origin: bottom right;transition: transform 0.25s ease-out;}
+      .white a:hover:after {transform: scaleX(1);transform-origin: bottom left;}
     }
     </style>
 
