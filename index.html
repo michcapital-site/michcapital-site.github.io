@@ -40,6 +40,7 @@
       .white {opacity:0;transform-origin: right;background-color: white;color: black;justify-content: center;position: fixed;z-index: 10;top: 50%;width: 50%;left: 50%;transform: translate(-50%, -50%)scaleX(0);padding: 1em;padding-bottom: 0;}
       .black {width: 100%;}
       .line {height:50vh;}
+      .container {min-height: calc(var(--vh, 1vh) * 100);}
     }
     </style>
 
@@ -75,6 +76,11 @@
               .to(".phone a", {duration: 0.25, delay: 0.1, y:0, opacity: 1, ease: "Power3.out"})
               .to(".email a", {duration: 0.25, y:0, opacity: 1, ease: "Power3.out"});
       };
+      window.addEventListener('resize', () => {
+        // We execute the same script as before
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      });
     </script>
     </body>
 </html>
