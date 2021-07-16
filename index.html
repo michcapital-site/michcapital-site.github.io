@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Mich Capital Inc.</title>
-        <meta name="description" content="Mich Capital Inc. — New York, NY.">
+        <meta name="description" content="Mich Capital. New York, NY.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,6 +31,15 @@
     .white a:hover:after {transform: scaleX(1);transform-origin: bottom left;}
     .phone, .email {margin-bottom: 2em; overflow: hidden;display: block;}
     .phone a, .email a {display: block;transform: translateY(-50px);opacity: 0;}
+    @media screen and (max-width: 768px) {
+      .white a {font-size: 1.5rem;}
+    }
+    @media screen and (max-width: 575px) {
+      .white a {font-size: 0.75rem;text-transform: uppercase;}
+      .phone, .email {margin-bottom:1em;}
+      .white {opacity:0;transform-origin: right;background-color: white;color: black;justify-content: center;position: fixed;z-index: 10;top: 50%;width: 50%;left: 50%;transform: translate(-50%, -50%)scaleX(0);padding: 1em;padding-bottom: 0;}
+      .black {width: 100%;}
+    }
     </style>
 
     </head>
@@ -61,6 +70,7 @@
               .to(".logo", {delay: 0.1, opacity: 1}, "ok")
               .to(".line", {duration: 0.6, scaleY: 1}, "ok+0.2")
               .to(".address", {duration: 0.3, opacity: 1})
+              .to(".white", {duration:0.2, scaleX:1, opacity:1})
               .to(".phone a", {delay: 0.1, y:0, opacity: 1, ease: "Power3.out"})
               .to(".email a", {y:0, opacity: 1, ease: "Power3.out"});
       };
