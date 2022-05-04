@@ -27,14 +27,14 @@
     .black a {color:white;text-decoration: none;cursor:alias;}
     .white {background-color: white; color: black;justify-content: center;}
     .white a {position: relative;font-size: 2rem;padding-bottom: 4px;cursor:e-resize;}
-    .phone, .email {margin-bottom: 2em; overflow: hidden;display: block;}
-    .phone a, .email a {display: block;transform: translateY(-50px);opacity: 0;}
+    .email {margin-bottom: 2em; overflow: hidden;display: block;}
+    .email a {display: block;transform: translateY(-50px);opacity: 0;}
     @media screen and (max-width: 768px) {
       .white a {font-size: 1.5rem;}
     }
     @media screen and (max-width: 575px) {
       .white a {font-size: 0.75rem;text-transform: uppercase;}
-      .phone, .email {margin-bottom:1em;}
+      .email {margin-bottom:1em;}
       .white {opacity:0;transform-origin: right;background-color: white;color: black;justify-content: center;position: fixed;z-index: 10;top: 50%;width: 50%;left: 50%;transform: translate(-50%, -50%)scaleX(0);padding: 1em;padding-bottom: 0;}
       .black {width: 100%;}
       .line {height:50vh;}
@@ -60,7 +60,6 @@
             </div>
 
             <div class="wrapper white">
-              <span class="phone"><a href="tel:+13472447860">+1 347 244 7860</a></span>
               <span class="email"><a href="mailto:info@michcapital.com">info@michcapital.com</a></span>
             </div>
         </div>
@@ -78,7 +77,6 @@
               .to(".line", {duration: 0.6, scaleY: 1}, "ok+0.2")
               .to(".address", {duration: 0.3, opacity: 1})
               .to(".white", {duration:0.2, scaleX:1, opacity:1})
-              .to(".phone a", {duration: 0.25, delay: 0.1, y:0, opacity: 1, ease: "Power3.out"})
               .to(".email a", {duration: 0.25, y:0, opacity: 1, ease: "Power3.out"});
       };
       window.addEventListener('resize', () => {
